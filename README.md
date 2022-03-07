@@ -1,4 +1,4 @@
-# Repositório para conteúdo de monitoria - Linguagens para Servidores
+# Repositório para conteúdo de monitoria - Programação de Sítios de Internet
 
 ## Prof: Alexandre Garcia -  Monitor: Ivan Guimarães dos S. da Silva
 
