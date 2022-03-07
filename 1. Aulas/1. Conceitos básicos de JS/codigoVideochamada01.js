@@ -47,13 +47,7 @@ function somar(a, b) {
 
 /* console.log(somar(4, 5)) */
 
-const somar2 = (a, b) => {
-    return a + b
-}
-
-/* console.log(somar2(4, 5)) */
-
-const criarUmCachorro = (nm, age, raca = null, cor) => {
+function criarUmCachorro(nm, age, raca = null, cor) {
     return {
         nome: nm,
         idade: age,
