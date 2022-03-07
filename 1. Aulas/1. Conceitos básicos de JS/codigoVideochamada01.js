@@ -1,3 +1,5 @@
+/* CÓDIGO FEITO NA VÍDEOCHAMADA 01 - 04/03/2021 */
+
 const minhaString = "Ivan Guimarães"
 
 const meuNumero = 22
