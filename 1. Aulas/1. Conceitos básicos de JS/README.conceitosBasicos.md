@@ -308,4 +308,4 @@ alunos e seria um desastre. No exemplo abaixo a minha função <i>somar</i> é a
 
 Exemplo:
 
-![imgIlustracao](#)
+![imgIlustracao](https://raw.githubusercontent.com/2504Guimaraes/Monitoria_Javascript_2022/master/1.%20Aulas/1.%20Conceitos%20b%C3%A1sicos%20de%20JS/imgs/print1.jpg)
