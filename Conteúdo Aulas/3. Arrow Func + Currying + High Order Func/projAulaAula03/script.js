@@ -154,5 +154,4 @@ console.log(funcZ(5,5)(5)) // Forma correta 2 :D
 const funcW = (a) => {
     return (b,c) => (d,e) => a + b + c + d + e
 }
-
 console.log(funcW(1)(1,1)(1,1))
