@@ -49,6 +49,8 @@ const exe3 = function(a,b,c) {
     return obj
 }
 
+////////////////////////////////////////////////////////////////
+
 // Ex 4. A expressão document.querySelector(".class1")
 // teria o efeito de:
 
