@@ -196,7 +196,6 @@ function fD() {
 function fE() {
     const males = []
     const females = []
-    const dogswithDefinedBridges = []
     for(let dog of listaCaes) {
         for(let prop in dog) {
             if (prop == 'sexo')
