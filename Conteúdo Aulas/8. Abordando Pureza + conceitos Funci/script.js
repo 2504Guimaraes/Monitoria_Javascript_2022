@@ -99,7 +99,7 @@ setInterval(() => {
     const p3 = add('C', p2)
     console.log('(pilha 3): [' + p3 + ']')
     const p4 = add('D', remove(2, p3))
-    console.log('(pilha 1): [' + p4 + ']')
+    console.log('(pilha 4): [' + p4 + ']')
     console.log('(pilha 3): [' + p3 + ']')
     console.log('(pilha 2): [' + p2 + ']')
     console.log('(pilha 1): [' + p1 + ']')
