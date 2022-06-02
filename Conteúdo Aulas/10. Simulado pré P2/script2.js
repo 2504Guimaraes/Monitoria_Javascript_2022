@@ -8,13 +8,13 @@
 const f = vl => vl
 
 const triplo = (f,x) => {
-    c = 0 
+    let c = 0
     while(c < 3) 
     { f(x); c++ }
 }
 
-console.log(triplo(f, 'Valor qualquer')) // R1: undefined
-console.log(triplo(v => v, 'Valor qualquer')) //R2: undefined
+console.log(triplo(f, 'Valor Qualquer')) // R: Undefined
+console.log(triplo(v => v, 'Valor Qualquer')) // R2: Undefined
 
 /*/////////////////////////////////////////////////////////////////////////*/
 
@@ -32,10 +32,12 @@ console.log(triplo(v => v, 'Valor qualquer')) //R2: undefined
 
 /*
     EX 03: Implemente uma função que receba um objeto: 
+
     { 1: 'palavra 1', 2: 'palavra 2', 3: 'palavra 3' }
-    e retorne um novo objeto da forma ao qual os índices sejam 
+
+    e retorne um novo objeto de forma ao qual os índices sejam 
     o triplo do objeto mencionado, e seus valores string estejam em
-    ordem reversa. É proibído usar nenhuma das estruturas a seguir:
+    ordem reversa. É proibído qualquer uma das estruturas a seguir:
     for, do, while e forEach.
 */
 
@@ -47,46 +49,34 @@ const obj = {
 
 const ex03 = (obj) => {
     const triplo = vl => parseInt(vl) * 3
-    const reverso = (str) => str.split('').reverse().join('')
+    const reverso = str => str.split('').reverse().join('')
     let nwObj = {}
     Object.keys(obj)
         .map(prop => nwObj[triplo(prop)] = reverso(obj[prop]))
     return nwObj
 }
 
-console.log(obj)
 console.log(ex03(obj))
+console.log(obj)
 
 /*/////////////////////////////////////////////////////////////////////////*/
 
 /*
-    EX 04: Indique as assertivas verdadeiras. 
+    EX 04: Indique as alternativas verdadeiras. 
 */
 
 // 4.1) Filter precisa de um predicado como parametro ? R: SIM
 
-// NOTA: Se vc por o mouse em cima do Filter vc nota que,
-// a func. q é argumento dentro do filter é chamada de
-// predicado...
-
-// const notas = [10,9,8,7,6,5,4,3,2,1]
-// const predicado = (valor) => valor > 5 ? valor : null
-// console.log(notas.filter(predicado))
-// PREDICADO = PROPRIEDADES | PARÂMETRO
-
-// ---- || ----
-
 // 4.2) Reduce é o equivalente da progra. funcional a contadores 
 // e acumuladores? R: SIM
 
-const idades = [70,85,54,90,92,120]
-const somaIdades = idades.reduce((antes, atual) =>  antes + atual)
-console.log(somaIdades)
+const idades = [10,23,44,70,90]
+const somaidades = idades.reduce((antes,atual) => antes + atual)
+console.log(somaidades)
 
 // 4.3) lista1.map(x => x) deve sempre ser igual a lista1? R: SIM
 
-const lista1 = ['a','b','c']
-console.log(lista1.map(x => x)) 
+console.log(['x','y','z'].map(x => x))
 
 // 4.4) Map é o mesmo que forEach? 
 // R: NÃÃOOO, map cria um clone, forEach muda o original
@@ -96,16 +86,16 @@ let b = [3,2,1]
 
 a.forEach((num, idx) => a[idx] = num * 3)
 console.log(a)
-
 b.map(idx => idx * 3)
 console.log(b)
 
 // 4.5) Filter é uma função de alta Ordem? R: SIM
 
-const A = [-3,-2,-1,0,1,2,3]
-const positivos = A.filter(valor => valor > 0) // fA(fB)
-console.log(positivos)
-
+const numeros = [0,1,1.1,1.2,2,3,4,5]
+const maiorQdois = (num) => num > 2 ? num : null 
+const lista2 = numeros.filter(vl => maiorQdois(vl)) // FA(FB)
+console.log(lista2) 
+console.log(numeros) 
 
 /*/////////////////////////////////////////////////////////////////////////*/
 
@@ -114,17 +104,18 @@ console.log(positivos)
     abaixo do ícone do site da Fatec. 
 */
 
+
 const ex05 = async () => {
-    let lista = []
+    let list = []
     await fetch('https://fatecrl.edu.br/')
     .then(dados => dados.text())
-    .then(sucesso => {
+    .then(result => {
         const dom = new DOMParser()
-        const doc = dom.parseFromString(sucesso, 'text/html')
+        const doc = dom.parseFromString(result, 'text/html')
         const cursos = doc.body.querySelectorAll('.home-course-title')
-        cursos.forEach(idx => lista.push(idx.innerHTML))
+        cursos.forEach(idx => list.push(idx.innerHTML))
     })
-    return lista
+    return list
 }
 
 console.log(ex05())
